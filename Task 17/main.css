@@ -1,0 +1,276 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+.assign1{
+    width: 50px;
+    height: 50px;
+    margin: 50px auto;
+    border: solid 5px #ed1f6e;
+    border-radius: 50%;
+    border-right-color: transparent;
+    position: relative;
+    animation-name: spin1;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+} 
+.assign1::before{
+    content: "";
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    border: solid 5px #0f90ff;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-bottom-color: transparent;
+}
+.assign1::after{
+    content: "";
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    border: solid 5px #fca600;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-left-color: transparent;
+
+}
+@keyframes spin1{
+    from{
+        transform: rotate(0turn);
+    }
+    to{
+        transform: rotate(1turn);
+    }
+}
+.assign1:hover{
+    animation-play-state: paused;
+}
+.assign2{
+    width: 50px;
+    height: 50px;
+    margin: 50px auto;
+    border-radius: 50%;
+    border: solid 5px #0f90ff ;
+    position: relative;
+    border-bottom-color: transparent;
+    animation-name: spin2;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+.assign2::before{
+    content: "";
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    position: absolute;
+    border: solid 5px #fca600;
+    border-bottom-color: transparent;
+    left: -17px;
+    top: -13px;
+    animation-name: spin2;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+
+}
+.assign2::after{
+    content: "";
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    border: solid 5px #000;
+    border-bottom-color: transparent;
+    left: -24px;
+    top: -22px;
+    animation-name: spin2;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+@keyframes spin2{
+    from{
+        transform: rotate(0turn);
+    }
+    to{
+        transform: rotate(1turn);
+    }
+
+}
+.assign2:hover, 
+.assign2:hover:before,
+.assign2:hover::after{
+    animation-play-state: running;
+}
+.assign3{
+    width: 50px;
+    height: 50px;
+    margin: 50px auto;
+    border-radius: 50%;
+    border: solid 5px #000;
+    border-left-color: transparent;
+    animation-name: spin3;
+    animation-duration: 1s;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes spin3{
+    from{
+        transform: rotate(0turn);
+    }
+    to{
+        transform: rotate(1turn);
+    }
+}
+.parent{
+    width: 400px;
+    height: 400px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: auto;
+    gap: 20px ;
+    position: relative;
+}
+.E div, 
+.L div{
+    background-color: #323534;
+}
+.E,
+.L{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(7, auto);
+}
+.one{
+    grid-area: 1 / 1 / 2 / 5;
+}
+.two{
+    grid-area: 2 / 1 / 5 / 2;
+}
+.three{
+    grid-area: 4 / 2 / 5 / 5;
+}
+.four{
+    grid-area: 5 / 1 / 7 / 2;
+}
+.five{
+    grid-area: 7 / 1 / 8 / 5;
+}
+.first{
+    grid-area: 1 / 1 / 7 / 2;
+}
+.second{
+    grid-area: 7 / 1 / 8 / 5;
+}
+.parent::before{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #fea604;
+    left: 138px;
+    top: 8px;
+    animation-name: move-e;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+}
+.parent::after{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #fea604;
+    left: 348px;
+    bottom: 8px;
+    opacity: 0;
+    animation-name: move-l;
+    animation-timing-function: linear;
+    animation-delay: 5s;
+    animation-duration: 3s; 
+}
+@keyframes move-e{
+    0%{
+        left: 138px;
+        top: 8px;
+    }
+    10%{
+        left: 5px;
+        top: 8px;
+    }
+    20%{
+        left: 5px;
+        top: 179px;
+    }
+    30%{
+        top: 179px;
+        left: 138px;
+    }
+    40%{
+        top: 179px;
+        left: 5px;
+    }
+    50%{
+        left: 5px;
+        top: 350px;
+    }
+    60%{
+        top: 350px;
+        left: 138px;
+    }
+    70%{
+        top: 350px;
+        left: 5px;;
+    }
+    90%{
+        left: 5px;
+        top: 8px;
+    }
+    100%{
+        left: 138px;
+        top: 8px;
+    }
+}
+@keyframes move-l{
+    0%{
+        opacity: 0;
+        left: 348px;
+        bottom: 8px;
+    }
+    10%{
+        opacity: 1;
+        left: 348px;
+        bottom: 8px;
+    }
+    30%{
+        opacity: 1;
+        left: 214px;
+        bottom: 8px;
+
+    }
+    90%{
+        opacity: 1;
+        left: 214px;
+        bottom: 350px;  
+
+    }
+    100%{
+        opacity: 0;
+        left: 214px;
+        bottom: 350px; 
+
+    }
+}
